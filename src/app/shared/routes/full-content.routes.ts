@@ -15,30 +15,30 @@ export const Full_Content_Routes: Routes = [
     //     path: 'apps',
     //     loadChildren: () => import('../../components/apps/apps.module').then(m => m.AppsModule)
     // },
-    {
-        path: 'charts',
-        loadChildren: () => import('../../components/charts/charts.module').then(m => m.ChartModule)
-    },
-    {
-        path: 'wallet',
-        loadChildren: () => import('../../components/mainwallet/mainwallet.module').then(m => m.MainWalletModule)
-    },  
-    {
-            path: 'drawwallet',
-            loadChildren: () => import('../../components/drawwallet/drawwallet.module').then(m => m.DrawWalletModule)
-        },
-        {
-                path: 'user',
-                loadChildren: () => import('../../components/user/userlist.module').then(m => m.UserListModule)
-            },
-            {
-                path: 'payment',
-                loadChildren: () => import('../../components/userpayment/userpayment.module').then(m => m.UserpaymentModule)
-            },
-            {
-                path: 'draworder',
-                loadChildren: () => import('../../components/draworder/draworder.module').then(m => m.DraworderModule)
-            },
+    // {
+    //     path: 'charts',
+    //     loadChildren: () => import('../../components/charts/charts.module').then(m => m.ChartModule)
+    // },
+    // {
+    //     path: 'wallet',
+    //     loadChildren: () => import('../../components/mainwallet/mainwallet.module').then(m => m.MainWalletModule)
+    // },  
+    // {
+    //         path: 'drawwallet',
+    //         loadChildren: () => import('../../components/drawwallet/drawwallet.module').then(m => m.DrawWalletModule)
+    //     },
+        // {
+        //         path: 'user',
+        //         loadChildren: () => import('../../components/user/userlist.module').then(m => m.UserListModule)
+        //     },
+        //     {
+        //         path: 'payment',
+        //         loadChildren: () => import('../../components/userpayment/userpayment.module').then(m => m.UserpaymentModule)
+        //     },
+        //     {
+        //         path: 'draworder',
+        //         loadChildren: () => import('../../components/draworder/draworder.module').then(m => m.DraworderModule)
+        //     },
             // {
             //     path: 'paymenttran',
             //     loadChildren: () => import('../../components/paytranscation/payment-transcation.module').then(m => m.PaymentTranscationModule)

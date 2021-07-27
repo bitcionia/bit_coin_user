@@ -82,31 +82,31 @@ export class NavService implements OnDestroy {
     {
       path: 'dashboard/dashboard', title: 'Dashboard', type: 'link', icon: 'ti-home',active: true,
     },
-    {
-      path: 'user/userlist', title: 'User', type: 'link', icon: 'ti-user', active: false,
-    },
+    // {
+    //   path: 'user/userlist', title: 'User', type: 'link', icon: 'ti-user', active: false,
+    // },
     
    
-    {
-      path: 'charts/Charts', title: 'Analytics', icon: 'ti-bar-chart-alt',active:false,
-      // children: [
-      //   { path: '/charts/apex', title: 'Apex', type: 'link' },
-      //   { path: '/charts/chartjs', title: 'Chart.js', type: 'link' },
-      //   // { path: '/charts/echart', title: 'Echart', type: 'link' },
-      //   // { path: '/charts/chartlist', title: 'Chartist', type: 'link' },
-      // ]
-    },
-    {
-      title: 'Wallet', icon: 'ti-wallet', type: 'sub', active: false,
-      children: [
-        { path: '/wallet/crypto-dashboard', title: 'Main Wallet ', type: 'link', },
-        { path: '/wallet/accumfund', title: 'Accumulate Fund', type: 'link' },
-        { path: '/wallet/subwallet', title: 'Sub Wallet', type: 'link' },
-        { path: '/wallet/coldwallet', title: 'Cold Wallet', type: 'link' },
-        { path: '/wallet/distwallet', title: 'Distribution Wallet', type: 'link' },
+    // {
+    //   path: 'charts/Charts', title: 'Analytics', icon: 'ti-bar-chart-alt',active:false,
+    //   // children: [
+    //   //   { path: '/charts/apex', title: 'Apex', type: 'link' },
+    //   //   { path: '/charts/chartjs', title: 'Chart.js', type: 'link' },
+    //   //   // { path: '/charts/echart', title: 'Echart', type: 'link' },
+    //   //   // { path: '/charts/chartlist', title: 'Chartist', type: 'link' },
+    //   // ]
+    // },
+    // {
+    //   title: 'Wallet', icon: 'ti-wallet', type: 'sub', active: false,
+    //   children: [
+    //     { path: '/wallet/crypto-dashboard', title: 'Main Wallet ', type: 'link', },
+    //     { path: '/wallet/accumfund', title: 'Accumulate Fund', type: 'link' },
+    //     { path: '/wallet/subwallet', title: 'Sub Wallet', type: 'link' },
+    //     { path: '/wallet/coldwallet', title: 'Cold Wallet', type: 'link' },
+    //     { path: '/wallet/distwallet', title: 'Distribution Wallet', type: 'link' },
        
-      ]
-    },
+    //   ]
+    // },
     {
       title: 'Draw',  type: 'sub',icon: 'ti-money', active: false,
       children: [
