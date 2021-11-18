@@ -1,41 +1,47 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { SharedModule } from './shared/shared.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { CarouselModule } from 'ngx-owl-carousel-o';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import {APP_BASE_HREF} from '@angular/common';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
+// import { NgxCaptchaModule } from 'ngx-captcha';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+
+import { HttpClientModule } from '@angular/common/http';
+import { IndexComponent } from './components/index/index.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AuthenticationComponent,
-
+    HeaderComponent,
+    FooterComponent,
+    IndexComponent,
+    
+    
+    
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    // NgxCaptchaModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
-    AppRoutingModule,
-    NgbModule,
-    RouterModule,
-    SharedModule,
-    CarouselModule,
-    ToastrModule.forRoot(
-      {
-        timeOut: 1000
-      }
-    ),
-  ],
+    ReactiveFormsModule ,
+    MatTabsModule,
+    HttpClientModule,
+    
 
-  providers: [],
-  bootstrap: [AppComponent],
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  // providers:[],
+
+  providers:[{provide: APP_BASE_HREF, useValue: '/'}],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

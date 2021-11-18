@@ -1,33 +1,40 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { HoriFullLayoutComponent } from './shared/layouts-horizontal/hori-full-layout/hori-full-layout.component';
-import { ContentLayoutComponent } from './shared/layouts/content-layout/content-layout.component';
-import { ErrorLayoutComponent } from './shared/layouts/error-layout/error-layout.component';
-import { FullLayoutComponent } from './shared/layouts/full-layout/full-layout.component';
-import { MessageLayoutComponent } from './shared/layouts/message-layout/message-layout.component';
-import { Content_Routes,  Message_Routes } from './shared/routes/content.routes';
-import {  Full_Content_Routes } from './shared/routes/full-content.routes';
+import { RouterModule, Routes } from '@angular/router';
+import { IndexComponent } from './components/index/index.component';
+
+import { FooterComponent } from './components/layout/footer/footer.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: AuthenticationComponent },
-  { path: '', component: FullLayoutComponent, children: Full_Content_Routes },
-  // { path: '', component: HoriFullLayoutComponent, children: Full_Content_Routes },
-  { path: '', component: ContentLayoutComponent, children: Content_Routes },
-  { path: '', component: MessageLayoutComponent, children: Message_Routes },
-  // { path: '', component: ErrorLayoutComponent, children: Error_Routes },
+  { path: 'index', component: IndexComponent},
+  { path: 'header', component: HeaderComponent},
+  { path: 'footer', component: FooterComponent},
+  
 
-  { path: '**', redirectTo: 'login' }
+  // 
+  
+
+  {
+    path: '',
+    redirectTo: 'index',
+    pathMatch: 'full'
+  },
+  { path: 'user-control', loadChildren: () => import('./components/user-control/user-control.module').then(m => m.UserControlModule) },
+  { path: 'user-setting', loadChildren: () => import('./components/user-setting/user-setting.module').then(m => m.UserSettingModule) },
+  { path: 'user-Draw', loadChildren: () => import('./components/user-draw/user-draw.module').then(m => m.UserDrawModule) },
+  { path: 'user-popup', loadChildren: () => import('./components/user-popup/user-popup.module').then(m => m.UserPopupModule) },
+
+  { path: '**', redirectTo: 'index' }
+
+  // { path: 'index', component: IndexComponent },
 ];
 
 @NgModule({
-  imports: [[RouterModule.forRoot(routes, {
-    anchorScrolling: 'enabled',
-    scrollPositionRestoration: 'enabled',
-    relativeLinkResolution: 'legacy'
-  })],
-  ],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+   
+  
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
